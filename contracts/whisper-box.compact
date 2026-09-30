@@ -1,0 +1,64 @@
+pragma language_version 0.23;
+
+import CompactStandardLibrary;
+
+/**
+ * WhisperBox — anonymous survey / feedback on Midnight.
+ *
+ * Encoding (prover-side):
+ * - `privateClaim` is a 32-byte witness payload.
+ * - Bytes 0..7 = little-endian u64 rating (1..5 recommended; 0 = empty demo).
+ * - Bytes 24..31 = domain tag "WhisperB" (exactly 8 bytes).
+ * - Circuit takes `rating: Uint<64>` as a *private* circuit parameter.
+ * - TypeScript witnesses must supply a rating that matches that encoding.
+ *
+ * Demo submission rule:
+ * - submitted = disclose(rating >= 1 && rating <= 5)
+ * - Under-demo (rating outside 1..5) is still allowed; submitted=false, responseCount++.
+ *
+ * Public ledger ONLY:
+ * - submitted (Boolean)
+ * - responseCount (Counter)
+ * - latestCommitment (Bytes<32>) = persistentHash(claim)
+ *
+ * NEVER writes rating / claim cleartext to the ledger.
+ * Level 2 does NOT publish per-option tallies (that would weaken privacy).
+ */
+
+export ledger submitted: Boolean;
+export ledger responseCount: Counter;
+export ledger latestCommitment: Bytes<32>;
+
+constructor() {
+  submitted = false;
+  latestCommitment = pad(32, "");
+}
+
+/**
+ * Private 32-byte feedback claim. Never written cleartext on-chain.
+ */
+witness privateClaim(): Bytes<32>;
+
+/**
+ * Prove a survey response was cast without revealing the private rating.
+ * `rating` is a private circuit parameter (not a public ledger field).
+ */
+export circuit submitFeedback(rating: Uint<64>): [] {
+  const claim = privateClaim();
+  const commitment = disclose(persistentHash<Bytes<32>>(claim));
+  latestCommitment = commitment;
+  submitted = disclose(rating >= 1 && rating <= 5);
+  responseCount.increment(1);
+}
+
+export circuit getResponseCount(): Uint<64> {
+  return responseCount;
+}
+
+export circuit getSubmitted(): Boolean {
+  return submitted;
+}
+
+export circuit getLatestCommitment(): Bytes<32> {
+  return latestCommitment;
+}

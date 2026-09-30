@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "file": "index.js",
+  "sourceRoot": "../../../../",
+  "sources": ["contracts/whisper-box.compact", "compiler/standard-library.compact"],
+  "names": [],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EA+BA;;;;;;;;;;;;;MAcA,AAAA,cAMC;;;;;cAN6B,QAAgB;;;;;;;;;;;;;;;;;;yCAAhB,QAAgB;;;;;;;;;gDAAhB,QAAgB;;;OAM7C;MAED,AAAA,gBAEC;;;;;;;;;;;;;;;;;;;;;;OAAA;MAED,AAAA,YAEC;;;;;;;;;;;;;;;;;;;;;;OAAA;MAED,AAAA,mBAEC;;;;;;;;;;;;;;;;;;;;;;OAAA;;;;;;;;;;;;;;GA7BA;EAHD;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAJA;;;;;;;;;yEAAiC;IACjC;;;;;;;;;yEAAqC;IACrC;;;;;;;;;yEAA0C;IAGxC;;;;;;;;;yEAAS;IACT;;;;;;;;;yEAAgB;;;;;;;GACjB;EClCD,AAAA,kBAAA;oEAAA;;;EDuCA,AAAA,eAAkC;;0DAAlC,YAAkC;;;;;;;;;;;;;;GAAA;EAMlC,AAAA,iBAMC,4BAN6B,QAAgB;UACtC,OAAsB;UACtB,YAAuD,0BAAP,OAAK;IAC3D;;;;;;;2HAAmB,YAAU;;yEAAb;UAChB,KAAS,GAAY,QAAM,UAAS,QAAM;IAA1C;;;;;;;2HAAA,KAAS;;yEAAA;UACT,KAAa;IAAb;;;;;;;;;;6FAAA,KAAa;;;;wEAAA;;GACd;EAED,AAAA,mBAEC;mCADQ;;;;;;;;;;;wGAAa;GACrB;EAED,AAAA,eAEC;mCADQ;;;;;;;;;;;wGAAS;GACjB;EAED,AAAA,sBAEC;mCADQ;;;;;;;;;;;wGAAgB;GACxB;;;;;;;;;;;;;;;;IApCD;qCAAA;;;;;;;;;;;0GAAiC;KAAA;IACjC;qCAAA;;;;;;;;;;;0GAAqC;KAAA;IACrC;qCAAA;;;;;;;;;;;0GAA0C;KAAA;;;;;;;;;;"
+}
