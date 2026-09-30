@@ -129,6 +129,16 @@ describe("WhisperBox runtime ledger", () => {
     expect(state.responseCount).toBe(1n);
   });
 
+  it("accepts boundary ratings 1 and 5 as submitted=true", () => {
+    const low = setup(1n);
+    const afterLow = low.contract.impureCircuits.submitFeedback(low.ctx, 1n);
+    expect(ledger(afterLow.context.currentQueryContext.state).submitted).toBe(true);
+
+    const high = setup(5n);
+    const afterHigh = high.contract.impureCircuits.submitFeedback(high.ctx, 5n);
+    expect(ledger(afterHigh.context.currentQueryContext.state).submitted).toBe(true);
+  });
+
   it("updates commitment and count on successive submissions", () => {
     const { contract, ctx } = setup(3n);
     const first = contract.impureCircuits.submitFeedback(ctx, 3n);
