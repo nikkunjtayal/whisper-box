@@ -362,7 +362,7 @@ export default function App() {
       </section>
 
       <footer className="footer">
-        <span>WhisperBox · Level 2 — Waxing Crescent</span>
+        <span>WhisperBox · Level 3 — First Quarter</span>
         <span>
           Faucet:{" "}
           <a href={PREPROD.faucetUrl} target="_blank" rel="noreferrer">
