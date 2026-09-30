@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | Public repo | https://github.com/nikkunjtayal/whisper-box |
-| Live demo | _(paste Vercel URL after deploy)_ |
+| Live demo | _https://whisper-box-kappa.vercel.app_ |
 | Demo video | [DEMO_VIDEO.md](docs/evidence/DEMO_VIDEO.md) _(paste Drive/YouTube when ready)_ |
 | Product idea | **Anonymous Feedback / Survey** |
 | Preprod contract | See table below · label **Preprod** |

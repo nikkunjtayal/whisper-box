@@ -1,14 +1,14 @@
-# Live demo — WhisperBox
+# Live demo � WhisperBox
 
 | Field | Value |
 |---|---|
-| Live URL | _(paste Vercel production URL)_ |
+| Live URL | https://whisper-box-kappa.vercel.app |
 | Network | **Preprod** |
 | Repo | https://github.com/nikkunjtayal/whisper-box |
 
 ## Smoke path
 
-1. Open live URL → Connect 1AM on Preprod.
+1. Open live URL ? Connect 1AM on Preprod.
 2. Deploy (first time) or Join known address.
-3. Enter PRIVATE rating 1–5 → Call `submitFeedback`.
+3. Enter PRIVATE rating 1�5 ? Call `submitFeedback`.
 4. Confirm public panel shows `submitted` / `responseCount` / commitment; private rating cleared.

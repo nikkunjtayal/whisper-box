@@ -11,7 +11,7 @@ Record a ~60–90s walkthrough of the live Preprod demo:
 
 | Field | Value |
 |---|---|
-| Live demo | _(Vercel URL)_ |
+| Live demo | https://whisper-box-kappa.vercel.app |
 | Network | **Preprod** |
 | **Video URL** | _(pending — paste Drive or YouTube link here and in README)_ |
 
