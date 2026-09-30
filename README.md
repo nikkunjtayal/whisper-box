@@ -107,3 +107,8 @@ Compact compile (WSL): `npm run compile:wsl`
 ## License
 
 MIT Â© nikkunjtayal
+
+---
+
+Built for Midnight **New Moon to Full** — Level 2 Waxing Crescent.
+
