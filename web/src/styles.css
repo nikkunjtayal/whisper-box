@@ -1,0 +1,370 @@
+:root {
+  --ink: #0c1412;
+  --panel: #12201c;
+  --line: #2a4038;
+  --fog: #9bb5aa;
+  --paper: #e8f2ec;
+  --brand: #d4efe3;
+  --accent: #6ecf9b;
+  --accent-deep: #3d8f68;
+  --pass: #7ad4a4;
+  --fail: #d4a07a;
+  --glow: rgba(110, 207, 155, 0.18);
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "Source Sans 3", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--paper);
+  font-family: var(--font-body);
+  background:
+    radial-gradient(900px 480px at 90% 0%, rgba(110, 207, 155, 0.14), transparent 55%),
+    radial-gradient(700px 420px at 0% 40%, rgba(70, 120, 140, 0.18), transparent 50%),
+    linear-gradient(165deg, #081210 0%, #0f1a17 45%, #0a1210 100%);
+  background-attachment: fixed;
+}
+
+a {
+  color: var(--accent);
+}
+
+.shell {
+  width: min(1080px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.25rem 0 4rem;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.brand-mark {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--brand);
+}
+
+.wallet-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.addr {
+  font-size: 0.78rem;
+  color: var(--fog);
+  max-width: 16rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, #1a2c26, #101c18);
+  color: var(--paper);
+  font: 600 0.9rem/1 var(--font-body);
+  padding: 0.7rem 1rem;
+  border-radius: 0.65rem;
+  cursor: pointer;
+  transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+.btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--glow);
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-accent {
+  border-color: rgba(110, 207, 155, 0.45);
+  background: linear-gradient(180deg, #1a3d30, #102820);
+  color: #e8fff4;
+}
+
+.hero {
+  min-height: min(52vh, 480px);
+  display: grid;
+  align-content: end;
+  gap: 0.85rem;
+  padding: 2rem 0 2.5rem;
+  position: relative;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 4.4rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+}
+
+.hero p {
+  margin: 0;
+  max-width: 36rem;
+  color: var(--fog);
+  line-height: 1.55;
+  font-size: 1.05rem;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 0.5rem;
+}
+
+.panel {
+  border: 1px solid var(--line);
+  background: linear-gradient(165deg, rgba(18, 32, 28, 0.94), rgba(10, 18, 16, 0.96));
+  border-radius: 1rem;
+  padding: 1.35rem 1.4rem 1.5rem;
+}
+
+.panel h2 {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.lede {
+  margin: 0 0 1.1rem;
+  color: var(--fog);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+  margin-bottom: 0.9rem;
+}
+
+.field label {
+  font-size: 0.78rem;
+  color: var(--fog);
+  letter-spacing: 0.02em;
+}
+
+.field input {
+  appearance: none;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
+  background: #0a1210;
+  color: var(--paper);
+  font: 500 0.92rem/1.4 var(--font-body);
+  padding: 0.75rem 0.9rem;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--accent-deep);
+  box-shadow: 0 0 0 3px var(--glow);
+}
+
+.meta {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.meta > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.88rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid rgba(42, 64, 56, 0.7);
+}
+
+.meta > div span:first-child {
+  color: var(--fog);
+}
+
+.badge {
+  display: inline-flex;
+  padding: 0.15rem 0.55rem;
+  border-radius: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.badge.pass {
+  background: rgba(122, 212, 164, 0.16);
+  color: var(--pass);
+}
+
+.badge.fail {
+  background: rgba(212, 160, 122, 0.16);
+  color: var(--fail);
+}
+
+.note,
+.status-line {
+  margin: 0.85rem 0 0;
+  font-size: 0.82rem;
+  color: var(--fog);
+  line-height: 1.45;
+}
+
+.err {
+  margin: 0.75rem 0 0;
+  color: var(--fail);
+  font-size: 0.88rem;
+}
+
+.privacy {
+  margin-top: 2rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: 1.4rem;
+  background: rgba(8, 18, 16, 0.7);
+}
+
+.privacy h2 {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-display);
+}
+
+.privacy table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.privacy th,
+.privacy td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.7rem 0.5rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+
+.privacy th {
+  width: 6.5rem;
+  color: var(--accent);
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+.footer {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  color: var(--fog);
+}
+
+code {
+  font-size: 0.85em;
+  color: var(--brand);
+}
+
+@media (max-width: 720px) {
+  .shell {
+    width: calc(100% - 1.25rem);
+    padding: 1rem 0 3rem;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .wallet-actions {
+    width: 100%;
+  }
+
+  .wallet-actions .btn,
+  .cta-row .btn {
+    width: 100%;
+  }
+
+  .addr {
+    max-width: 100%;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 1.25rem 0 1.75rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 11vw, 2.9rem);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    border-radius: 0.85rem;
+    padding: 1.1rem;
+  }
+
+  .meta > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .privacy th {
+    width: auto;
+    display: block;
+    padding-bottom: 0.15rem;
+  }
+
+  .privacy td {
+    display: block;
+    padding-top: 0.15rem;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+}
